@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Caramélisé — Chocolaterie &amp; Pâtisserie Cloud Kitchen</title>
+<meta name="description" content="Caramélisé — a chocolaterie &amp; pâtisserie cloud kitchen crafting custom cakes, artisan chocolates and desserts, made fresh to order.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:,">
+<style>
+  :root{
+    --cream:#fffaf4;
+    --cream-deep:#fbf2e6;
+    --blush:#f7e1e6;
+    --blush-deep:#f0c9d3;
+    --pistachio:#dde8cd;
+    --pistachio-deep:#c6d9ac;
+    --gold:#c9a15a;
+    --gold-soft:#ecd9ae;
+    --rose-gold:#c79a94;
+    --rose-gold-deep:#b17f78;
+    --ink:#463536;
+    --ink-soft:#8a7570;
+    --ink-faint:#a99a92;
+    --white:#ffffff;
+    --shadow: 0 20px 45px -20px rgba(70,53,54,0.25);
+    --shadow-soft: 0 10px 30px -15px rgba(70,53,54,0.18);
+    --radius-lg: 34px;
+    --radius-md: 20px;
+    --radius-sm: 12px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Jost', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;margin:0;padding:0;}
+  h1,h2,h3,h4{
+    font-family:'Playfair Display', serif;
+    margin:0;
+    color:var(--ink);
+    font-weight:600;
+  }
+  .container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--rose-gold-deep);
+    font-weight:600;
+    margin-bottom:16px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .section-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 56px;
+  }
+  .section-head h2{
+    font-size:clamp(1.9rem, 4vw, 2.7rem);
+    line-height:1.2;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:1.02rem;
+    margin-top:14px;
+    line-height:1.7;
+  }
+  section{ padding: 96px 0; position:relative; }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 34px;
+    border-radius:50px;
+    font-family:'Jost', sans-serif;
+    font-size:0.95rem;
+    letter-spacing:0.03em;
+    font-weight:500;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform .35s ease, box-shadow .35s ease, background .35s ease, color .35s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--rose-gold-deep), var(--gold));
+    color:#fff;
+    box-shadow:0 14px 30px -12px rgba(183,127,120,0.55);
+  }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 18px 34px -12px rgba(183,127,120,0.65); }
+  .btn-ghost{
+    background:transparent;
+    border-color:rgba(70,53,54,0.25);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{ background:rgba(70,53,54,0.06); transform:translateY(-3px); }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:1000;
+    background:rgba(255,250,244,0.75);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid rgba(201,161,90,0.18);
+    transition:box-shadow .3s ease;
+  }
+  header.scrolled{ box-shadow:0 8px 24px -18px rgba(70,53,54,0.35); }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 24px;
+    max-width:1200px;
+    margin:0 auto;
+  }
+  .logo{
+    font-family:'Playfair Display', serif;
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:0.02em;
+    display:flex;
+    flex-direction:column;
+    line-height:1;
+  }
+  .logo small{
+    font-family:'Jost', sans-serif;
+    font-size:0.55rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:500;
+    margin-top:4px;
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:38px;
+  }
+  .nav-links a{
+    font-size:0.92rem;
+    color:var(--ink);
+    position:relative;
+    padding:4px 0;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:0;
+    width:0;height:1px;
+    background:var(--gold);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-cta{ display:flex; align-items:center; gap:16px; }
+  .nav-cta .btn{ padding:11px 24px; font-size:0.85rem; }
+  .burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:8px;
+    z-index:1100;
+  }
+  .burger span{
+    width:24px;height:2px;
+    background:var(--ink);
+    border-radius:2px;
+    transition:transform .3s ease, opacity .3s ease;
+  }
+  .burger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .burger.open span:nth-child(2){ opacity:0; }
+  .burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  .mobile-panel{
+    position:fixed;
+    top:0; right:0;
+    height:100vh;
+    width:min(78vw, 320px);
+    background:var(--cream);
+    box-shadow:-14px 0 40px -18px rgba(70,53,54,0.35);
+    transform:translateX(100%);
+    transition:transform .4s cubic-bezier(.7,0,.3,1);
+    z-index:1050;
+    padding:100px 32px 40px;
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+  }
+  .mobile-panel.open{ transform:translateX(0); }
+  .mobile-panel a{ font-size:1.1rem; font-family:'Playfair Display',serif; }
+  .overlay{
+    position:fixed; inset:0;
+    background:rgba(70,53,54,0.35);
+    opacity:0; pointer-events:none;
+    transition:opacity .35s ease;
+    z-index:1020;
+  }
+  .overlay.show{ opacity:1; pointer-events:auto; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:170px 0 110px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-120px; left:-160px;
+    width:420px;height:420px;
+    background:radial-gradient(circle, var(--blush) 0%, transparent 70%);
+    z-index:0;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:-160px; right:-140px;
+    width:460px;height:460px;
+    background:radial-gradient(circle, var(--pistachio) 0%, transparent 70%);
+    z-index:0;
+  }
+  .hero-grid{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero-text h1{
+    font-size:clamp(2.6rem, 6vw, 4.4rem);
+    line-height:1.05;
+    margin-bottom:8px;
+  }
+  .hero-pronounce{
+    font-style:italic;
+    color:var(--ink-faint);
+    font-size:1rem;
+    margin-bottom:22px;
+  }
+  .hero-text p.lead{
+    font-size:1.12rem;
+    line-height:1.8;
+    color:var(--ink-soft);
+    max-width:480px;
+    margin-bottom:36px;
+  }
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:44px; }
+  .hero-tags{ display:flex; gap:28px; flex-wrap:wrap; }
+  .hero-tags div{ font-size:0.82rem; color:var(--ink-soft); display:flex; align-items:center; gap:8px; }
+  .hero-tags span.dot{ width:6px;height:6px;border-radius:50%; background:var(--gold); display:inline-block; }
+
+  .hero-visual{ position:relative; display:flex; justify-content:center; }
+  .hero-ring{
+    position:absolute;
+    width:106%; height:106%;
+    border:1.5px solid var(--gold-soft);
+    border-radius:58% 42% 62% 38% / 45% 55% 45% 55%;
+    top:-3%; left:-3%;
+    animation:float-rotate 18s linear infinite;
+  }
+  @keyframes float-rotate{
+    0%{ transform:rotate(0deg); }
+    100%{ transform:rotate(360deg); }
+  }
+  .hero-photo-wrap{
+    position:relative;
+    width:min(100%, 400px);
+    border-radius:58% 42% 63% 37% / 48% 52% 48% 52%;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:6px solid var(--white);
+    aspect-ratio: 4 / 5;
+  }
+  .hero-photo-wrap img{ width:100%; height:100%; object-fit:cover; }
+  .hero-badge{
+    position:absolute;
+    bottom:-18px; left:-18px;
+    background:var(--white);
+    padding:16px 20px;
+    border-radius:20px;
+    box-shadow:var(--shadow-soft);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    max-width:220px;
+  }
+  .hero-badge .icon{
+    width:38px;height:38px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--pistachio-deep), var(--pistachio));
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.1rem;
+    flex-shrink:0;
+  }
+  .hero-badge strong{ display:block; font-size:0.82rem; font-family:'Playfair Display',serif; }
+  .hero-badge small{ color:var(--ink-soft); font-size:0.72rem; }
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .strip{
+    background:linear-gradient(90deg, var(--rose-gold-deep), var(--gold), var(--rose-gold-deep));
+    color:#fff;
+    padding:14px 0;
+    overflow:hidden;
+  }
+  .strip-track{
+    display:flex;
+    gap:48px;
+    white-space:nowrap;
+    animation:scroll-left 26s linear infinite;
+    width:max-content;
+  }
+  .strip-track span{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-size:0.98rem;
+    letter-spacing:0.02em;
+    opacity:0.95;
+  }
+  @keyframes scroll-left{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-50%); }
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:64px;
+    align-items:center;
+  }
+  .about-photo{ position:relative; }
+  .about-photo .frame{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    aspect-ratio:4/4.6;
+  }
+  .about-photo .frame img{ width:100%; height:100%; object-fit:cover; }
+  .about-photo .ornament{
+    position:absolute;
+    width:120px;height:120px;
+    border-radius:50%;
+    background:var(--blush);
+    z-index:-1;
+    top:-30px; right:-30px;
+  }
+  .about-copy p{
+    color:var(--ink-soft);
+    line-height:1.9;
+    font-size:1.03rem;
+    margin:0 0 20px;
+  }
+  .about-stats{
+    display:flex;
+    gap:20px;
+    margin-top:36px;
+    flex-wrap:wrap;
+  }
+  .about-stats .stat{
+    background:var(--white);
+    border:1px solid rgba(201,161,90,0.25);
+    border-radius:var(--radius-sm);
+    padding:18px 22px;
+    flex:1;
+    min-width:150px;
+  }
+  .about-stats .stat strong{
+    display:block;
+    font-family:'Playfair Display',serif;
+    font-size:1.3rem;
+    color:var(--rose-gold-deep);
+    margin-bottom:4px;
+  }
+  .about-stats .stat span{ font-size:0.82rem; color:var(--ink-soft); }
+
+  /* ---------- SPECIALTIES ---------- */
+  .bg-alt{ background:var(--cream-deep); }
+  .spec-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:26px;
+  }
+  .spec-card{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:34px 26px;
+    text-align:center;
+    box-shadow:var(--shadow-soft);
+    transition:transform .35s ease, box-shadow .35s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .spec-card:hover{ transform:translateY(-8px); box-shadow:var(--shadow); }
+  .spec-card .spec-photo{
+    width:100%;
+    aspect-ratio:4/3;
+    border-radius:var(--radius-sm);
+    overflow:hidden;
+    margin-bottom:20px;
+  }
+  .spec-card .spec-photo img{ width:100%; height:100%; object-fit:cover; }
+  .spec-icon{
+    width:56px;height:56px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.5rem;
+    margin:0 auto 18px;
+    background:linear-gradient(135deg, var(--blush), var(--blush-deep));
+  }
+  .spec-card h3{ font-size:1.15rem; margin-bottom:10px; }
+  .spec-card p{ color:var(--ink-soft); font-size:0.92rem; line-height:1.7; }
+
+  /* ---------- GALLERY ---------- */
+  .gallery-columns{
+    column-count:4;
+    column-gap:20px;
+  }
+  .gallery-item{
+    break-inside:avoid;
+    margin-bottom:20px;
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+    box-shadow:var(--shadow-soft);
+  }
+  .gallery-item img{
+    width:100%;
+    display:block;
+    transition:transform .6s ease;
+  }
+  .gallery-item:hover img{ transform:scale(1.08); }
+  .gallery-item::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(70,53,54,0.45), transparent 45%);
+    opacity:0;
+    transition:opacity .35s ease;
+  }
+  .gallery-item:hover::after{ opacity:1; }
+  .gallery-item .zoom-hint{
+    position:absolute;
+    bottom:14px; left:16px;
+    color:#fff;
+    font-size:0.78rem;
+    letter-spacing:0.05em;
+    opacity:0;
+    transition:opacity .35s ease;
+  }
+  .gallery-item:hover .zoom-hint{ opacity:1; }
+  .gallery-note{
+    text-align:center;
+    color:var(--ink-faint);
+    font-size:0.85rem;
+    font-style:italic;
+    margin-top:36px;
+  }
+
+  /* Lightbox */
+  .lightbox{
+    position:fixed; inset:0;
+    background:rgba(35,26,27,0.92);
+    display:flex; align-items:center; justify-content:center;
+    z-index:2000;
+    opacity:0; pointer-events:none;
+    transition:opacity .3s ease;
+    padding:24px;
+  }
+  .lightbox.show{ opacity:1; pointer-events:auto; }
+  .lightbox img{
+    max-width:min(90vw, 640px);
+    max-height:82vh;
+    border-radius:16px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.5);
+  }
+  .lightbox-close{
+    position:absolute;
+    top:26px; right:32px;
+    color:#fff;
+    font-size:1.8rem;
+    background:none;border:none;cursor:pointer;
+    line-height:1;
+  }
+  .lightbox-nav{
+    position:absolute;
+    top:50%; transform:translateY(-50%);
+    background:rgba(255,255,255,0.12);
+    border:none;
+    color:#fff;
+    width:46px;height:46px;
+    border-radius:50%;
+    font-size:1.3rem;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .lightbox-nav.prev{ left:24px; }
+  .lightbox-nav.next{ right:24px; }
+
+  /* ---------- HOW TO ORDER ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+    counter-reset: step;
+  }
+  .step{
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:40px 30px;
+    position:relative;
+    box-shadow:var(--shadow-soft);
+  }
+  .step::before{
+    counter-increment:step;
+    content: counter(step, decimal-leading-zero);
+    font-family:'Playfair Display',serif;
+    font-size:2.6rem;
+    color:var(--gold-soft);
+    display:block;
+    margin-bottom:14px;
+    -webkit-text-stroke:1px var(--gold);
+    color:transparent;
+  }
+  .step h3{ font-size:1.2rem; margin-bottom:12px; }
+  .step p{ color:var(--ink-soft); font-size:0.94rem; line-height:1.7; }
+  .steps-cta{ text-align:center; margin-top:50px; }
+
+  /* ---------- WHY US ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:24px;
+  }
+  .why-item{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:26px 28px;
+    box-shadow:var(--shadow-soft);
+  }
+  .why-item .spec-icon{ margin:0; flex-shrink:0; width:48px;height:48px;font-size:1.2rem; }
+  .why-item h4{ font-size:1.05rem; margin-bottom:6px; }
+  .why-item p{ color:var(--ink-soft); font-size:0.9rem; line-height:1.65; margin:0; }
+
+  /* ---------- CONTACT / CTA ---------- */
+  .cta-band{
+    background:linear-gradient(135deg, var(--rose-gold-deep), var(--gold));
+    border-radius:var(--radius-lg);
+    padding:64px 48px;
+    text-align:center;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-band::before,.cta-band::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+  }
+  .cta-band::before{ width:220px;height:220px; top:-100px; left:-60px; }
+  .cta-band::after{ width:260px;height:260px; bottom:-120px; right:-80px; }
+  .cta-band h2{ color:#fff; font-size:clamp(1.8rem,4vw,2.5rem); position:relative; z-index:1; }
+  .cta-band p{ opacity:0.92; max-width:520px; margin:16px auto 32px; position:relative; z-index:1; line-height:1.7; }
+  .cta-band .btn-primary{ background:#fff; color:var(--rose-gold-deep); box-shadow:0 14px 30px -12px rgba(0,0,0,0.25); position:relative; z-index:1; }
+  .cta-band .btn-primary:hover{ background:var(--cream); }
+  .cta-contacts{
+    display:flex; justify-content:center; gap:36px; margin-top:34px; flex-wrap:wrap;
+    position:relative; z-index:1;
+  }
+  .cta-contacts a{ color:#fff; font-size:0.92rem; display:flex; align-items:center; gap:8px; opacity:0.95; }
+  .cta-contacts a:hover{ opacity:1; text-decoration:underline; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:56px 0 32px;
+    text-align:center;
+  }
+  footer .logo{ justify-content:center; align-items:center; margin-bottom:18px; }
+  footer .foot-links{
+    display:flex; justify-content:center; gap:30px; margin-bottom:26px; flex-wrap:wrap;
+  }
+  footer .foot-links a{ font-size:0.88rem; color:var(--ink-soft); }
+  footer .foot-links a:hover{ color:var(--rose-gold-deep); }
+  footer .copyright{ font-size:0.78rem; color:var(--ink-faint); }
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .float-whatsapp{
+    position:fixed;
+    bottom:26px; right:26px;
+    width:60px;height:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#3fb96f,#25d366);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 30px -10px rgba(37,211,102,0.6);
+    z-index:900;
+    animation:pulse-wa 2.6s ease-in-out infinite;
+  }
+  .float-whatsapp svg{ width:28px;height:28px; }
+  @keyframes pulse-wa{
+    0%,100%{ box-shadow:0 14px 30px -10px rgba(37,211,102,0.6); }
+    50%{ box-shadow:0 14px 34px -6px rgba(37,211,102,0.85); }
+  }
+
+  /* ---------- REVEAL ANIMATION ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  /* Safety net: if JS never runs, content must still be visible */
+  .no-js .reveal{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    .nav-links{ display:none; }
+    .nav-cta .btn-ghost{ display:none; }
+    .burger{ display:flex; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-visual{ order:-1; margin-bottom:20px; }
+    .hero-photo-wrap{ width:min(72vw, 340px); margin:0 auto; }
+    .hero-text{ text-align:center; }
+    .hero-text .lead{ margin-left:auto; margin-right:auto; }
+    .hero-actions, .hero-tags{ justify-content:center; }
+    .about-grid{ grid-template-columns:1fr; }
+    .about-photo .frame{ max-width:420px; margin:0 auto; }
+    .spec-grid{ grid-template-columns:repeat(2, 1fr); }
+    .gallery-columns{ column-count:3; }
+    .steps{ grid-template-columns:1fr; }
+    .why-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width: 640px){
+    section{ padding:64px 0; }
+    .section-head{ margin-bottom:38px; }
+    .spec-grid{ grid-template-columns:1fr 1fr; gap:16px; }
+    .spec-card{ padding:22px 16px; }
+    .gallery-columns{ column-count:2; column-gap:12px; }
+    .gallery-item{ margin-bottom:12px; border-radius:16px; }
+    .hero{ padding:140px 0 70px; }
+    .cta-band{ padding:48px 24px; }
+    .cta-contacts{ gap:20px; }
+    .hero-badge{ max-width:190px; padding:12px 14px; }
+    .about-stats{ flex-direction:column; }
+  }
+  @media (max-width: 420px){
+    .spec-grid{ grid-template-columns:1fr 1fr; }
+    .gallery-columns{ column-count:2; }
+    .logo{ font-size:1.3rem; }
+  }
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+
+<header id="site-header">
+  <nav>
+    <a href="#home" class="logo">Caramélisé<small>Chocolaterie &amp; Pâtisserie</small></a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#specialties">Specialties</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#order">How to Order</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">Contact</a>
+      <a href="https://wa.me/918769497014?text=Hi%20Caram%C3%A9lis%C3%A9!%20I%27d%20like%20to%20know%20more%20about%20ordering%20a%20cake." target="_blank" rel="noopener" class="btn btn-primary">Order on WhatsApp</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#specialties">Specialties</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#order">How to Order</a>
+  <a href="#contact">Contact</a>
+  <a href="https://wa.me/918769497014" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:10px;">Order on WhatsApp</a>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <div class="eyebrow">Chocolaterie &amp; Pâtisserie · Cloud Kitchen</div>
+        <h1>Caramélisé</h1>
+        <p class="hero-pronounce">pronounced "Kara-meh-lizay"</p>
+        <p class="lead">Custom cakes, artisan chocolates and pâtisserie — made fresh to order, and finished with a little extra elegance for every celebration.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/918769497014?text=Hi%20Caram%C3%A9lis%C3%A9!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" class="btn btn-primary">Order on WhatsApp</a>
+          <a href="#gallery" class="btn btn-ghost">View Our Styles</a>
+        </div>
+        <div class="hero-tags">
+          <div><span class="dot"></span>Made fresh, per order</div>
+          <div><span class="dot"></span>Fully customisable</div>
+          <div><span class="dot"></span>Delivered with care</div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-ring"></div>
+        <div class="hero-photo-wrap">
+          <img src="assets/hero-dark-chocolate-rose-gold-cake.jpg" alt="Elegant dark chocolate cake with rose and gold detailing by Caramélisé">
+        </div>
+        <div class="hero-badge">
+          <div class="icon">🍫</div>
+          <div><strong>Handcrafted</strong><small>Chocolates &amp; Cakes</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="strip-track">
+      <span>✦ Custom Celebration Cakes</span>
+      <span>✦ Artisan Chocolates</span>
+      <span>✦ Pâtisserie &amp; Desserts</span>
+      <span>✦ Dessert Hampers</span>
+      <span>✦ Made Fresh to Order</span>
+      <span>✦ Custom Celebration Cakes</span>
+      <span>✦ Artisan Chocolates</span>
+      <span>✦ Pâtisserie &amp; Desserts</span>
+      <span>✦ Dessert Hampers</span>
+      <span>✦ Made Fresh to Order</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-photo reveal">
+        <div class="ornament"></div>
+        <div class="frame">
+          <img src="assets/golden-chocolate-birthday-cake.jpg" alt="Rich chocolate celebration cake with gold detailing, crafted by Caramélisé">
+        </div>
+      </div>
+      <div class="about-copy reveal">
+        <div class="eyebrow">Our Story</div>
+        <h2>Sweetness, made to order</h2>
+        <p>Caramélisé is a home-grown chocolaterie &amp; pâtisserie cloud kitchen — every cake, chocolate and dessert is prepared fresh once you order it, not pulled off a shelf. That means your celebration gets a dessert made specifically around your flavour, size and design brief.</p>
+        <p>From delicate pâtisserie to statement celebration cakes and gifting-worthy chocolate hampers, the studio works closely with each customer over WhatsApp and Instagram to get every detail — from the flavour to the finishing touches — just right.</p>
+        <div class="about-stats">
+          <div class="stat"><strong>100%</strong><span>Made to order</span></div>
+          <div class="stat"><strong>Custom</strong><span>Flavours &amp; designs</span></div>
+          <div class="stat"><strong>Cloud</strong><span>Kitchen model</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALTIES -->
+  <section id="specialties" class="bg-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">What We Craft</div>
+        <h2>Our Specialties</h2>
+        <p>A little something for every occasion — designed around your taste, your theme and your celebration.</p>
+      </div>
+      <div class="spec-grid">
+        <div class="spec-card reveal">
+          <div class="spec-icon">🎂</div>
+          <h3>Custom Cakes</h3>
+          <p>Celebration cakes designed around your theme, flavour and colour palette — from intimate to statement-sized.</p>
+        </div>
+        <div class="spec-card reveal">
+          <div class="spec-icon">🍫</div>
+          <h3>Artisan Chocolates</h3>
+          <p>Handcrafted chocolates and truffles, finished with delicate detailing for gifting or indulgence.</p>
+        </div>
+        <div class="spec-card reveal">
+          <div class="spec-photo"><img src="assets/patisserie-display-selection.jpg" alt="Assorted pâtisserie and desserts"></div>
+          <h3>Pâtisserie &amp; Desserts</h3>
+          <p>Delicate pastries and desserts crafted with a French-inspired touch.</p>
+        </div>
+        <div class="spec-card reveal">
+          <div class="spec-icon">🎁</div>
+          <h3>Dessert Hampers</h3>
+          <p>Curated gifting hampers combining cakes, chocolates and pastries for festive and corporate gifting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">Style Gallery</div>
+        <h2>Flavours &amp; Styles We Love</h2>
+        <p>A mood board of the kinds of designs, colours and finishes Caramélisé can bring to your celebration — share what you love and we'll craft it around your occasion.</p>
+      </div>
+      <div class="gallery-columns reveal" id="galleryGrid">
+        <div class="gallery-item"><img src="assets/chocolate-oreo-drip-cake.jpg" alt="Chocolate Oreo drip cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/pastel-pearl-wreath-cake.jpg" alt="Pastel pearl wreath cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/berry-chocolate-drip-cake.jpg" alt="Berry chocolate drip cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/lilac-butterfly-birthday-cake.jpg" alt="Lilac butterfly birthday cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/blue-ice-cream-drip-cake.jpg" alt="Blue ice-cream drip cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/vintage-floral-cake.jpg" alt="Vintage floral cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/pastel-birthday-cake.jpg" alt="Pastel birthday cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/chocolate-bow-cake.jpg" alt="Chocolate bow cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/pastel-crown-birthday-cake.jpg" alt="Pastel crown birthday cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/ribbon-just-for-you-cake.jpg" alt="Ribbon 'just for you' cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/romantic-red-rose-cake.jpg" alt="Romantic red rose cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/celestial-moon-stars-cake.jpg" alt="Celestial moon and stars cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/rich-chocolate-drip-cake.jpg" alt="Rich chocolate drip cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/lilac-butterfly-floral-cake.jpg" alt="Lilac butterfly floral cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/vintage-strawberry-pearl-cake.jpg" alt="Vintage strawberry pearl cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/red-bow-textured-cake.jpg" alt="Red bow textured cake"><span class="zoom-hint">View ⤢</span></div>
+        <div class="gallery-item"><img src="assets/assorted-cake-slices.jpg" alt="Assorted cake slices"><span class="zoom-hint">View ⤢</span></div>
+      </div>
+      <p class="gallery-note">Tap any style you love and share it with us on WhatsApp — we'll recreate it around your flavour &amp; theme.</p>
+    </div>
+  </section>
+
+  <!-- HOW TO ORDER -->
+  <section id="order" class="bg-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">Simple &amp; Personal</div>
+        <h2>How to Order</h2>
+        <p>Every order is a conversation — here's how it usually goes.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <h3>Message Us</h3>
+          <p>Reach out on WhatsApp or Instagram with your occasion and the date you need it by.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Share Your Vision</h3>
+          <p>Tell us your flavour, size and any design inspiration — screenshots and colour ideas are always welcome.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Confirm &amp; Enjoy</h3>
+          <p>We confirm the design, price and delivery details, then craft it fresh for your special day.</p>
+        </div>
+      </div>
+      <div class="steps-cta reveal">
+        <a href="https://wa.me/918769497014?text=Hi%20Caram%C3%A9lis%C3%A9!%20I%27d%20like%20to%20start%20an%20order." target="_blank" rel="noopener" class="btn btn-primary">Start Your Order on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">Why Caramélisé</div>
+        <h2>Crafted With Care, Every Time</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <div class="spec-icon">🌿</div>
+          <div><h4>Made Fresh to Order</h4><p>Nothing is pre-made — every dessert is prepared once your order is confirmed.</p></div>
+        </div>
+        <div class="why-item reveal">
+          <div class="spec-icon">🎨</div>
+          <div><h4>Fully Customisable</h4><p>Flavours, sizes and designs are shaped around your celebration, not the other way round.</p></div>
+        </div>
+        <div class="why-item reveal">
+          <div class="spec-icon">💬</div>
+          <div><h4>Personal Ordering Experience</h4><p>You work directly with the studio over WhatsApp or Instagram from brief to delivery.</p></div>
+        </div>
+        <div class="why-item reveal">
+          <div class="spec-icon">📦</div>
+          <div><h4>Delivered With Care</h4><p>Every order is packed carefully so it arrives looking just as good as it tastes.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2>Ready to Plan Your Celebration?</h2>
+        <p>Message Caramélisé today and let's craft something beautiful together — for birthdays, anniversaries, festivities or just because.</p>
+        <a href="https://wa.me/918769497014?text=Hi%20Caram%C3%A9lis%C3%A9!%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" class="btn btn-primary">Chat on WhatsApp</a>
+        <div class="cta-contacts">
+          <a href="https://wa.me/918769497014" target="_blank" rel="noopener">📱 +91 87694 97014</a>
+          <a href="https://www.instagram.com/caramelise.in" target="_blank" rel="noopener">📷 @caramelise.in</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <a href="#home" class="logo">Caramélisé<small>Chocolaterie &amp; Pâtisserie</small></a>
+    <div class="foot-links">
+      <a href="#about">About</a>
+      <a href="#specialties">Specialties</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#order">How to Order</a>
+      <a href="https://www.instagram.com/caramelise.in" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://wa.me/918769497014" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <p class="copyright">© <span id="year"></span> Caramélisé. All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="float-whatsapp" href="https://wa.me/918769497014?text=Hi%20Caram%C3%A9lis%C3%A9!" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9c1.8 1 3.9 1.5 6.3 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2.1 0-4.1-.6-5.8-1.6l-.4-.2-4.6 1.2 1.2-4.5-.3-.5A9.7 9.7 0 0 1 6.2 15c0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.4 9.8-9.8 9.8zm5.4-7.3c-.3-.1-1.7-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 0 1-2.3-1.4 8.7 8.7 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.4-.5.2-.4c.1-.1.1-.3 0-.4s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3 2 3 4.7 4.2c.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3s.2-1.2.2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose">&times;</button>
+  <button class="lightbox-nav prev" id="lbPrev">&#10094;</button>
+  <img src="" alt="" id="lbImg">
+  <button class="lightbox-nav next" id="lbNext">&#10095;</button>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Header shadow on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  });
+
+  // Mobile menu
+  const burger = document.getElementById('burger');
+  const panel = document.getElementById('mobilePanel');
+  const overlay = document.getElementById('overlay');
+  function closeMenu(){
+    burger.classList.remove('open');
+    panel.classList.remove('open');
+    overlay.classList.remove('show');
+  }
+  burger.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    overlay.classList.toggle('show', isOpen);
+  });
+  overlay.addEventListener('click', closeMenu);
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+  // Safety net: never let content stay hidden if something above misfires
+  setTimeout(() => revealEls.forEach(el => el.classList.add('in')), 3500);
+
+  // Lightbox
+  const galleryImgs = Array.from(document.querySelectorAll('#galleryGrid .gallery-item img'));
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  let currentIndex = 0;
+
+  function openLightbox(i){
+    currentIndex = i;
+    lbImg.src = galleryImgs[i].src;
+    lbImg.alt = galleryImgs[i].alt;
+    lightbox.classList.add('show');
+  }
+  function closeLightbox(){ lightbox.classList.remove('show'); }
+  function showRelative(delta){
+    currentIndex = (currentIndex + delta + galleryImgs.length) % galleryImgs.length;
+    lbImg.src = galleryImgs[currentIndex].src;
+    lbImg.alt = galleryImgs[currentIndex].alt;
+  }
+
+  galleryImgs.forEach((img, i) => {
+    img.closest('.gallery-item').addEventListener('click', () => openLightbox(i));
+  });
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', () => showRelative(-1));
+  document.getElementById('lbNext').addEventListener('click', () => showRelative(1));
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if(!lightbox.classList.contains('show')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') showRelative(-1);
+    if(e.key === 'ArrowRight') showRelative(1);
+  });
+</script>
+
+</body>
+</html>
