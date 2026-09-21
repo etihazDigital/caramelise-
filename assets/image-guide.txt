@@ -1,0 +1,71 @@
+CARAMÉLISÉ WEBSITE — IMAGE GUIDE
+================================
+This file lists every image used on the website, where it appears, and the
+recommended size/orientation — so real product photography can be dropped in
+later using the SAME file name (no code changes needed if the new photo has
+a similar shape).
+
+NOTE: These 20 images are placeholder / inspiration photos (not verified to
+be Caramélisé's own product photography) — used here purely to build out the
+layout beautifully. Swap them for the client's real photos when ready, using
+the exact file names below so nothing breaks.
+
+HERO BANNER (top of page)
+--------------------------------
+hero-dark-chocolate-rose-gold-cake.jpg
+  → Large feature photo next to the main headline.
+  → Best shape: portrait, roughly 3:4 to 4:5 (taller than wide).
+
+ABOUT SECTION
+--------------------------------
+golden-chocolate-birthday-cake.jpg
+  → Feature photo beside the brand story text.
+  → Best shape: portrait or square, roughly 4:5.
+
+SPECIALTIES SECTION
+--------------------------------
+patisserie-display-selection.jpg
+  → Small card photo for the "Chocolates & Pâtisserie" specialty card.
+  → Best shape: landscape or square, roughly 4:3.
+
+GALLERY — "Flavours & Styles We Love" (masonry grid, in this order)
+--------------------------------
+ 1. chocolate-oreo-drip-cake.jpg
+ 2. pastel-pearl-wreath-cake.jpg
+ 3. berry-chocolate-drip-cake.jpg
+ 4. lilac-butterfly-birthday-cake.jpg
+ 5. blue-ice-cream-drip-cake.jpg
+ 6. vintage-floral-cake.jpg
+ 7. pastel-birthday-cake.jpg
+ 8. chocolate-bow-cake.jpg
+ 9. pastel-crown-birthday-cake.jpg
+10. ribbon-just-for-you-cake.jpg
+11. romantic-red-rose-cake.jpg
+12. celestial-moon-stars-cake.jpg
+13. rich-chocolate-drip-cake.jpg
+14. lilac-butterfly-floral-cake.jpg
+15. vintage-strawberry-pearl-cake.jpg
+16. red-bow-textured-cake.jpg
+17. assorted-cake-slices.jpg
+
+  → All gallery photos work best as portrait or square crops (roughly 4:5).
+  → The grid auto-adjusts to each photo's own height, so exact pixel sizes
+    don't need to match — just keep photos reasonably high-resolution
+    (at least 1000px on the longer side) for a crisp look on large screens.
+
+LEFT OUT ON PURPOSE
+--------------------------------
+Two images from the original zip file were NOT used because they show
+another bakery's name/branding (a storefront sign and a display case
+tagged with someone else's Instagram handle) — publishing those on
+Caramélisé's site would misrepresent them as Caramélisé's own shop/work.
+If needed, they're still sitting in the raw uploaded ZIP, not copied here.
+
+HOW TO REPLACE AN IMAGE LATER
+--------------------------------
+1. Prepare the client's real photo (JPG, ~1000–1600px on the longer side,
+   compressed to keep the site fast — 100–300KB per image is a good target).
+2. Rename it to match exactly one of the file names above.
+3. Drop it into this "assets" folder, overwriting the placeholder.
+4. Refresh the site — no HTML/code edits needed since the file name stays
+   the same.
